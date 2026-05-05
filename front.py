@@ -1,9 +1,9 @@
 import streamlit as st
 import requests
 
-api_url = 'http://127.0.0.1:8008/predict'
+api_url = 'http://127.0.0.1:8000/predict'
 
-st.title('Diabet Test')
+st.title('Diabets')
 
 Pregnancies = st.number_input('Pregnancies', min_value=0.0, step=0.1)
 Glucose = st.number_input('Glucose', min_value=0.0, step=0.1)
@@ -12,7 +12,7 @@ SkinThickness = st.number_input('SkinThickness', min_value=0.0, step=0.1)
 Insulin = st.number_input('Insulin', min_value=0.0, step=0.1)
 BMI = st.number_input('BMI', min_value=0.0, step=0.1)
 DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.0, step=0.1)
-Age = st.number_input('Age', min_value=0.0, step=0.1)
+Age = st.number_input('Age', min_value=0, step=1)
 
 diabet_data = {
     'Pregnancies': Pregnancies,
@@ -36,4 +36,4 @@ if st.button('Predict'):
         else:
             st.error(f"Ошибка: {answer.status_code}")
     except requests.exceptions.RequestException:
-        st.error("Ошибка подключения к API")
+        st.error("Error conectid with API")

@@ -34,4 +34,4 @@ async def predict_bank(deabet: DiabetsSchema):
     return {'Predict': new_data}
 
 if __name__ == '__main__':
-    uvicorn.run(diabets_app, host='127.0.0.1', port=8008)
+    uvicorn.run(diabets_app, host='127.0.0.1', port=8000)
